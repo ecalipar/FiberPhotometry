@@ -6,7 +6,7 @@
  function realData=normSlope(channel_1,channel_2)
 		
 		
-		y=(channel_2-median(channel_2))/median(channel_2);
+	y=(channel_2-median(channel_2))/median(channel_2);
     x=(channel_1-median(channel_1))/median(channel_1);
         
     function normSignal=resamp (signal,noise,Fs,S,fsResamp)
@@ -27,9 +27,9 @@
     normalized_1=resamp(x,y,381.6793893,3001,400);
     filtered_normalized = sgolayfilt(normalized_1,1,3001);
        
+
     realData = normalized_1-filtered_normalized;
     hold on 
-    plot(t,realData,'yellow')
-        
+    plot(t,realData,'yellow')    
 end
  
